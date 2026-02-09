@@ -7,6 +7,7 @@ if [ ! -f "$ZPLUG_HOME/init.zsh" ]; then
   command_exists curl || abort "curl required"
   curl -sL https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh \
     || abort "zplug install failed"
+  sleep 1 # we need to wait for init.zsh file to appear
 fi
 
 if [ ! -f "$ZPLUG_HOME/init.zsh" ]; then
@@ -18,7 +19,10 @@ command_exists zplug || abort "zplug not available"
 
 zplug "catppuccin/zsh-syntax-highlighting", \
   use:"themes/catppuccin_mocha-zsh-syntax-highlighting.zsh"
-zplug "zsh-users/zsh-syntax-highlighting", on:"catppuccin/zsh-syntax-highlighting"
+
+zplug "zsh-users/zsh-syntax-highlighting", \
+   on:"catppuccin/zsh-syntax-highlighting"
+
 zplug "zsh-users/zsh-autosuggestions"
 
 if ! zplug check; then
