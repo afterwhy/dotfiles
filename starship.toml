@@ -1,0 +1,174 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline=false
+
+# https://github.com/catppuccin/starship/blob/main/themes/mocha.toml
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+palette='catppuccin_mocha'
+
+################################
+# FORMAT ALL without following:
+# - all languages (but python for venv support)
+# - all cloud integration (aws, etc)
+# - singularity
+# - pijul_channel 
+# - vcsh
+# - fossil_branch
+# - fossil_metrics
+# - buf 
+# - nix_shell 
+# - meson 
+# - spack 
+# - direnv 
+# - env_var 
+# - mise
+# - custom
+# - status
+# - netns
+# - shell
+# - os
+# - container
+# - package is included bug disabled
+################################
+
+
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$hg_state\
+$docker_context\
+$package\
+$conda\
+$python\
+$memory_usage\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$character"""
+
+# https://starship.rs/config/#line-break
+[line_break]
+disabled=true
+
+# https://starship.rs/config/#username
+[username]
+#show_always=true
+format='[$user]($style)'
+
+# https://starship.rs/config/#hostname
+[hostname]
+ssh_only=true
+format='@[$ssh_symbol$hostname]($style) '
+
+# https://starship.rs/config/#local-ip
+[localip]
+ssh_only = true
+format = '@[$localipv4](bold maroon) '
+disabled = true
+
+[hg_branch]
+disabled=true
+
+[hg_state]
+disabled=true
+
+# https://starship.rs/config/#git-branch
+[git_branch]
+format='[git:]($style)[\[$symbol$branch(:$remote_branch)\]]($style bold) '
+style = 'purple'
+symbol=''
+only_attached=true
+
+# https://starship.rs/config/#git-commit
+[git_commit]
+format='[git:]($style)[\($hash$tag\)]($style bold)'
+style = 'green'
+only_detached=true
+
+# https://starship.rs/config/#docker-context
+[docker_context]
+disabled=true
+
+[battery]
+disabled=true
+full_symbol = "• "
+charging_symbol = "⇡ "
+discharging_symbol = "⇣ "
+unknown_symbol = "❓ "
+empty_symbol = "❗ "
+
+[package]
+disabled=true
+
+[time]
+disabled=false
+time_format='%T' # 15:14:13
+format='[/$time/]($style) '
+style='blue'
+
+[cmd_duration]
+disabled=true
+show_milliseconds=true
+min_time=0
+format='\[[$duration]($style)\]'
+style='text'
+min_time_to_notify=0
+
+# https://starship.rs/config/#memory-usage
+[memory_usage]
+disabled=true
+
+# https://starship.rs/config/#conda
+# only conda env is shown
+[conda]
+format='[conda:]($style)[$environment]($style bold) '
+symbol=''
+style='yellow'
+
+# https://starship.rs/config/#python
+# only python venv is shown
+[python]
+format='[venv:]($style)[$virtualenv]($style bold) '
+symbol=''
+style='yellow'
