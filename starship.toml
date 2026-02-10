@@ -4,6 +4,7 @@
 add_newline=false
 
 # https://github.com/catppuccin/starship/blob/main/themes/mocha.toml
+# https://catppuccin.com/palette/
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
