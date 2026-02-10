@@ -13,6 +13,11 @@ mkdir -p "$(dirname "$HISTFILE")"
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+# uncomment for vim-mode
+#bindkey -v
 
 # completion
 autoload -Uz compinit
