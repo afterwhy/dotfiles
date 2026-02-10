@@ -267,9 +267,6 @@ disabled=true
 [purescript]
 disabled=true
 
-[python]
-disabled=true
-
 [quarto]
 disabled=true
 
