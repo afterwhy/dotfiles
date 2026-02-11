@@ -100,7 +100,14 @@ format='[$user]($style)'
 # https://starship.rs/config/#hostname
 [hostname]
 ssh_only=true
-format='@[$ssh_symbol$hostname]($style) '
+format='@[$hostname]($style) '
+#ssh_symbol='🌐'
+style='bold green'
+
+[directory]
+disabled=false
+format='[$path:]($style)[$read_only]($read_only_style) '
+repo_root_format='[$before_root_path:]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 
 # https://starship.rs/config/#local-ip
 [localip]
@@ -126,6 +133,9 @@ only_attached=true
 format='[git:]($style)[\($hash$tag\)]($style bold)'
 style = 'green'
 only_detached=true
+
+[git_status]
+disabled=true
 
 # https://starship.rs/config/#docker-context
 [docker_context]
