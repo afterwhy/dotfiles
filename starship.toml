@@ -80,7 +80,7 @@ format='[$path]($style)[$read_only]($read_only_style) '
 repo_root_format='[$before_root_path]($before_repo_root_style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) '
 truncation_symbol='.../'
 truncation_length = 4
-# style = "bold lavender"
+style = "bold teal"
 
 # https://starship.rs/config/#local-ip
 [localip]
@@ -136,7 +136,7 @@ disabled=false
 show_milliseconds=true
 min_time=2_000
 format='[\($duration\)]($style) '
-style='subtext1'
+style='dimmed subtext1'
 min_time_to_notify=0
 
 # https://starship.rs/config/#memory-usage
