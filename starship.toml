@@ -133,7 +133,7 @@ style='blue'
 
 [cmd_duration]
 disabled=false
-show_milliseconds=true
+show_milliseconds=false
 min_time=2_000
 format='[\($duration\)]($style) '
 style='dimmed subtext1'
